@@ -50,3 +50,11 @@ def update_student(id: int, student: Student):
             students[index] = updated_student
             return updated_student
     raise HTTPException(status_code=404, detail="Student not found")
+
+@app.delete("/students/{id}")
+def delete_student(id: int):
+    for index, s in enumerate(students):
+        if s["id"] == id:
+            deleted_student = students.pop(index)
+            return {"message": "Student deleted", "student": deleted_student}
+    raise HTTPException(status_code=404, detail="Student not found")
