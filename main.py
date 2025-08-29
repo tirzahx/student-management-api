@@ -40,3 +40,13 @@ def create_student(student: Student):
     students.append(student_obj)
     students.sort(key=lambda s: s["id"])
     return student_obj
+
+@app.put("/students/{id}", response_model=Student)
+def update_student(id: int, student: Student):
+    for index, s in enumerate(students):
+        if s["id"] == id:
+            updated_student = student.model_dump(exclude_none=True)
+            updated_student["id"] = id
+            students[index] = updated_student
+            return updated_student
+    raise HTTPException(status_code=404, detail="Student not found")
