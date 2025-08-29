@@ -26,21 +26,21 @@ uvicorn main:app --reload
 
 ### **GET all students**
 
-GET http://127.0.0.1:8000/students
+GET: http://127.0.0.1:8000/students
 
 **Screenshot example:**
 ![GET all students](screenshots/get.png)
 
 ### **GET single student**
 
-GET http://127.0.0.1:8000/students/1
+GET: http://127.0.0.1:8000/students/1
 
 **Screenshot example:**
 ![GET single student](screenshots/get_by_id.png)
 
 ### **POST new student**
 
-POST http://127.0.0.1:8000/students
+POST: http://127.0.0.1:8000/students
 
 **Body (JSON):**
 
@@ -56,7 +56,7 @@ POST http://127.0.0.1:8000/students
 
 ### **PUT update student**
 
-PUT http://127.0.0.1:8000/students/1
+PUT: http://127.0.0.1:8000/students/1
 
 **Body (JSON):**
 
@@ -72,7 +72,7 @@ PUT http://127.0.0.1:8000/students/1
 
 ### **DELETE student**
 
-DELETE http://127.0.0.1:8000/students/1
+DELETE: http://127.0.0.1:8000/students/1
 
 **Screenshot example:**
 ![DELETE student](screenshots/delete.png)
