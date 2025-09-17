@@ -1,3 +1,10 @@
 fastapi 
 uvicorn
 pydantic
+langchain
+langchain-google-genai 
+langchain-community
+langgraph 
+python-dotenv
+langchain-tavily 
+langgraph-checkpoint-sqlite  
