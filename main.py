@@ -7,8 +7,8 @@ from langchain.agents import initialize_agent, AgentType
 from langchain.tools import Tool
 import json
 
-os.environ["GOOGLE_API_KEY"] = "***REMOVED***"
-os.environ["TAVILY_API_KEY"] = "***REMOVED***"
+os.environ["GOOGLE_API_KEY"] = "GOOGLE_API_KEY"
+os.environ["TAVILY_API_KEY"] = "TAVILY_API_KEY"
 
 api_key = os.environ["GOOGLE_API_KEY"]
 
@@ -154,8 +154,6 @@ def update_student(id: int, student: Student):
 @app.delete("/students/{id}")
 def delete_student(id: int):
     return delete_student_data(json.dumps({"id": id}))
-
-#####################################################################################################
 
 tools = [
     Tool(name="Add Student", func=add_student, description="Adds a student. Input should be a JSON string with 'name', 'age', 'gender', and 'email' keys."),
